@@ -21,7 +21,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/supplier/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('admin/suppliers/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
@@ -35,8 +35,10 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($supplier as $supplier): ?>
-									<tr>
+									<?php foreach ($suppliers as $supplier): ?>
+									<tr><td>
+											<?php echo $supplier->supplier_id ?>
+										</td>
 										<td width="150">
 											<?php echo $supplier->supplier_name ?>
 										</td>
@@ -44,9 +46,9 @@
 											<?php echo $supplier->supplier_address ?>
 										</td>
 											<td width="250">
-											<a href="<?php echo site_url('admin/supplier/edit/'.$supplier->supplier_id) ?>"
+											<a href="<?php echo site_url('admin/suppliers/edit/'.$supplier->supplier_id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/supplier/delete/'.$supplier->supplier_id) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('admin/suppliers/delete/'.$supplier->supplier_id) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>

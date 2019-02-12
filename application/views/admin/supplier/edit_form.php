@@ -41,7 +41,7 @@
 							<div class="form-group">
 								<label for="name">Name*</label>
 								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
-								 type="text" name="name" placeholder="supplier name" value="<?php echo $supplier->name ?>" />
+								 type="text" name="name" placeholder="supplier name" value="<?php echo $supplier->supplier_name ?>" />
 								<div class="invalid-feedback">
 									<?php echo form_error('name') ?>
 								</div>
@@ -50,7 +50,7 @@
 							<div class="form-group">
 								<label for="address">Address</label>
 								<input class="form-control <?php echo form_error('address') ? 'is-invalid':'' ?>"
-								 type="text" name="address" min="0" placeholder="Address" value="<?php echo $supplier->address ?>" />
+								 type="text" name="address" min="0" placeholder="Address" value="<?php echo $supplier->supplier_address ?>" />
 								<div class="invalid-feedback">
 									<?php echo form_error('address') ?>
 								</div>

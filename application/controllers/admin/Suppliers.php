@@ -1,8 +1,8 @@
-<?php
+<<?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Supplier extends CI_Controller
+class Suppliers extends CI_Controller
 {
     public function __construct()
     {
@@ -13,7 +13,7 @@ class Supplier extends CI_Controller
 
     public function index()
     {
-        $data["supplier"] = $this->supplier_model->getAll();
+        $data["suppliers"] = $this->supplier_model->getAll();
         $this->load->view("admin/supplier/list", $data);
     }
 
@@ -33,7 +33,7 @@ class Supplier extends CI_Controller
 
     public function edit($id = null)
     {
-        if (!isset($id)) redirect('admin/supplier');
+        if (!isset($id)) redirect('admin/suppliers');
 
         $supplier = $this->supplier_model;
         $validation = $this->form_validation;
@@ -55,7 +55,7 @@ class Supplier extends CI_Controller
         if (!isset($id)) show_404();
 
         if ($this->supplier_model->delete($id)) {
-            redirect(site_url('admin/supplier'));
+            redirect(site_url('admin/suppliers'));
         }
     }
 }
